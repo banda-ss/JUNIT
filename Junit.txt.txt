@@ -1,0 +1,73 @@
+Unit Testing:
+	Wghere we test our application at class level ad method level y providing +ve ad -ve and 
+	
+ADAVATAGES OF Unit Testing:
+	1. Assure Quality
+	2. Run Fast
+	3. Regession Suite
+
+
+ANNOTATIONS:	
+@Test:
+	The Test annotation tells JUnit that the public void method to which it is attached can be run as a test case. 
+	To run the method, JUnit first constructs a fresh instance of the class then invokes the annotated method. 
+	Any exceptions thrown by the test will be reported by JUnit as a failure. If no exceptions are thrown, the test is assumed to have succeeded
+
+@Before:
+	Methods annotated with the @Before annotation are run before each test. 
+	This is useful when we want to execute some common code before running a test.
+	
+@After:
+	Notice that we also added another method annotated with @After in order to clear the list after the execution of each test.		
+
+@BeforeClass:
+	If we marked a method with @BeforeClass annotation then that perticular method will execute only once for entire class
+	
+	for exectpion scenarios we need to use "expected" attribute on a @Test annotation like bellow:
+		@Test(expected=IllegalExectpoin.class)
+	
+	
+	
+ASSERT Methods: JUNIT4
+	assertEqual(expected, actual): will check the values of two objects
+	assertSame(): will checkthe reference of two objects
+	assertNotNull()
+	
+Can a JUnit test method have a return type other than void?
+	All the JUnit test methods should have a void return type. otherwise it will be ignored.
+	If the return type of a test method is changed, it would not be considered as a test method and would be ignored during execution of tests.
+
+setUp()
+tearDown()
+
+					---JUNIT5-------
+WHAT IS JUNIT 5?
+Unlike previous versions of JUnit, JUnit 5 is composed of several different modules from three different sub-projects.
+
+JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
+
+JUNIT PLATFORM: serves as a foundation for launching testing frameworks on the JVM. It also defines the TestEngine API for developing a testing framework that runs on the platform. Furthermore, the platform provides a Console Launcher to launch the platform from the command line and a JUnit 4 based Runner for running any TestEngine on the platform in a JUnit 4 based environment. First-class support for the JUnit Platform also exists in popular IDEs (see IntelliJ IDEA, Eclipse, NetBeans, and Visual Studio Code) and build tools (see Gradle, Maven, and Ant).
+
+JUNIT JUPITER: is the combination of the new programming model and extension model for writing tests and extensions in JUnit 5.
+ The Jupiter sub-project provides a TestEngine for running Jupiter based tests on the platform.
+
+JUNIT VINTAGE: provides a TestEngine for running JUnit 3 and JUnit 4 based tests on the platform. It requires JUnit 4.12 or later to be present on the class/module path.
+
+		>>JUNIT PLATFORM is a core platform which is good enough to write tests
+		
+MAVEN tips:
+	to create a stand alone project we need to select archtype-maven-quickstart
+	   Group id: com.siva.junit (like package name)
+	Artifact id: sivaJunit (like project name)
+
+1>right click on project->runas->maven clean  =it will delete all the data under TAGET folder
+2>right click on project->runas->maven install =it will compile all the classes and run all test classes and generate a jar under target directory
+	
+ASSERT Methods:	
+	Assertions.assertEqual(expected, actual): will check the values of two objects
+	Assertions.assertSame(): will checkthe reference of two objects
+	Assertions.assertNotNull()
+	
+	for exectpion scenarios we no need to use "expected" attribute on a @Test annotation in junit5, instead of that 
+	we have to use Assertions.assertThrows(actualType, executable)
+	
