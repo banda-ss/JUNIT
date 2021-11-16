@@ -71,3 +71,13 @@ ASSERT Methods:
 	for exectpion scenarios we no need to use "expected" attribute on a @Test annotation in junit5, instead of that 
 	we have to use Assertions.assertThrows(actualType, executable)
 	
+	
+When() and thenReturn():
+	>>When():
+	It enables stubbing methods. It should be used when we want to mock to return specific values when particular methods are called. 
+	In simple terms, "When the XYZ() method is called, then return ABC." It is mostly used when there is some condition to execute.
+	>>thenReturn():
+	The thenReturn() methods lets you define the return value when a particular method of the mocked object is been called
+
+
+	
